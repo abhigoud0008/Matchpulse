@@ -27,9 +27,19 @@ st.set_page_config(
 # LOAD DATA
 # --------------------------------------------------
 
-events = load_events("data/synthetic_events.json")
-stats = get_match_stats("data/synthetic_events.json")
+import os
 
+BASE_DIR = os.path.dirname(__file__)
+
+DATA_FILE = os.path.join(
+    BASE_DIR,
+    "data",
+    "synthetic_events.json"
+)
+
+events = load_events(DATA_FILE)
+
+stats = get_match_stats(DATA_FILE)
 # --------------------------------------------------
 # HEADER
 # --------------------------------------------------
